@@ -1,5 +1,8 @@
 package com.king.condict.controller;
 
+import com.king.condict.dao.UserDao;
+import com.king.condict.entry.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class Demo {
     @RequestMapping("/test")
     public String Test(){
-        return "test";
+        User user = new User();
+        user.setName("king");
+        user.setTitle("Test");
+        //userDao.insert(user);
+        return "success";
     }
 }
